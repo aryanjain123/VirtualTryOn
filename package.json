@@ -1,0 +1,26 @@
+{
+  "name": "extensionproject",
+  "version": "1.0.0",
+  "description": "A Chrome extension that allows you to virtually try on garments from any website using your own photos.",
+  "main": "background.js",
+  "dependencies": {
+    "@fal-ai/client": "^1.2.3",
+    "abort-controller": "^3.0.0",
+    "base64-js": "^1.5.1",
+    "buffer": "^6.0.3",
+    "event-target-shim": "^5.0.1",
+    "events": "^3.3.0",
+    "ieee754": "^1.2.1",
+    "process": "^0.11.10",
+    "readable-stream": "^4.7.0",
+    "replicate": "^0.25.2",
+    "safe-buffer": "^5.2.1",
+    "string_decoder": "^1.3.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

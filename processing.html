@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Virtual Try-On Processing</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    h1 {
+      color: #4285F4;
+      text-align: center;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .images-container {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      margin: 20px 0;
+    }
+    .image-box {
+      width: 30%;
+      text-align: center;
+    }
+    .image-box img {
+      max-width: 100%;
+      max-height: 300px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 5px;
+    }
+    .loading {
+      text-align: center;
+      margin: 20px 0;
+    }
+    .spinner {
+      border: 5px solid #f3f3f3;
+      border-top: 5px solid #4285F4;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 2s linear infinite;
+      margin: 0 auto;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .error {
+      color: red;
+      text-align: center;
+      margin: 20px 0;
+      padding: 10px;
+      border: 1px solid red;
+      border-radius: 4px;
+      background-color: #ffeeee;
+    }
+    .result {
+      margin-top: 20px;
+      text-align: center;
+    }
+    button {
+      background-color: #4285F4;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      margin: 10px;
+    }
+    button:hover {
+      background-color: #3367D6;
+    }
+    .download-btn {
+      margin-top: 10px;
+      background-color: #34A853;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 12px;
+    }
+    .download-btn:hover {
+      background-color: #2E8B57;
+    }
+    .test-api-section {
+      margin-top: 30px;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Virtual Try-On</h1>
+  
+  <div class="container" id="mainContainer">
+    <div class="loading" id="loadingSection">
+      <h2>Processing your virtual try-on...</h2>
+      <div class="spinner"></div>
+      <p>This may take a minute or two. Please wait while we generate your try-on image.</p>
+    </div>
+    
+    <div class="images-container" id="imagesSection" style="display: none;">
+      <div class="image-box">
+        <h3>Your Photo</h3>
+        <img id="userPhoto" src="" alt="Your photo">
+        <button class="download-btn" id="downloadUserPhoto">Download</button>
+      </div>
+      <div class="image-box">
+        <h3>Garment</h3>
+        <img id="garmentPhoto" src="" alt="Garment photo">
+        <button class="download-btn" id="downloadGarmentPhoto">Download</button>
+      </div>
+      <div class="image-box">
+        <h3>Result</h3>
+        <img id="resultPhoto" src="" alt="Result photo">
+      </div>
+    </div>
+    
+    <div class="error" id="errorSection" style="display: none;">
+      <h3>Error</h3>
+      <p id="errorMessage">There was an error processing your request.</p>
+    </div>
+    
+    <div class="result" id="resultSection" style="display: none;">
+      <button id="downloadButton">Download Result</button>
+      <button id="tryAnotherButton">Try Another Garment</button>
+    </div>
+    
+    <div class="test-api-section" id="testApiSection">
+      <h3>API Testing</h3>
+      <p>Download both images to test with your API:</p>
+      <button id="downloadBothButton">Download Both Images</button>
+      <p>This will download both the user photo and garment photo for API testing.</p>
+    </div>
+  </div>
+  
+  <script src="processing.js"></script>
+</body>
+</html> 

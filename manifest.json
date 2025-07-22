@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Virtual Try-On",
+  "version": "1.0",
+  "description": "Try on garments from any website using your own photos",
+  "permissions": [
+    "https://api.fal.ai/*",
+    "https://rest.alpha.fal.ai/*",
+    "contextMenus",
+    "downloads",
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://api.fal.ai/*",
+    "https://rest.alpha.fal.ai/*"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; connect-src 'self' https://api.fal.ai https://rest.alpha.fal.ai;"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "48": "icons/icon.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icons/icon.png"
+  }
+} 

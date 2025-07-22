@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Virtual Try-On</title>
+  <style>
+    body {
+      width: 300px;
+      padding: 15px;
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      font-size: 18px;
+      color: #4285F4;
+      margin-top: 0;
+    }
+    p {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.5;
+    }
+    .button-container {
+      margin-top: 15px;
+      text-align: center;
+    }
+    button {
+      background-color: #4285F4;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    button:hover {
+      background-color: #3367D6;
+    }
+    .status {
+      margin-top: 15px;
+      padding: 10px;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    .status.ready {
+      background-color: #e6f4ea;
+      color: #137333;
+    }
+    .status.not-ready {
+      background-color: #fce8e6;
+      color: #c5221f;
+    }
+    .feature-list {
+      margin-top: 15px;
+      font-size: 13px;
+    }
+    .feature-list li {
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Virtual Try-On</h1>
+  
+  <div id="statusContainer">
+    <!-- Status will be inserted here -->
+  </div>
+  
+  <p>Right-click on any garment image on a webpage and select "Try On This Garment & Download Images" from the context menu.</p>
+  
+  <div class="feature-list">
+    <strong>Features:</strong>
+    <ul>
+      <li>Try on garments virtually</li>
+      <li>Download user and garment photos for API testing</li>
+      <li>View and save the generated result</li>
+    </ul>
+  </div>
+  
+  <div class="button-container">
+    <button id="managePhotos">Manage My Photos</button>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html> 
