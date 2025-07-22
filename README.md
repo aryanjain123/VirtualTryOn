@@ -42,6 +42,3 @@ This extension uses:
 
 Your photos are stored locally on your device and are only sent to our AI model when you choose to try on a garment. We do not store your photos on our servers.
 
-## License
-
-MIT 
